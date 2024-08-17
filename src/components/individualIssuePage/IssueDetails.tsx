@@ -24,7 +24,7 @@ const IssueDetails: React.FC<{ issueId: string }> = ({ issueId }) => {
 
   useEffect(() => {
     const fetchIssue = async () => {
-      if (!issueId) return; // Early exit if issueId is not available
+      if (!issueId) return; 
 
       try {
         const response = await axios.get(
@@ -48,8 +48,7 @@ const IssueDetails: React.FC<{ issueId: string }> = ({ issueId }) => {
     };
 
     fetchIssue();
-  }, [issueId]); // Add issueId to the dependency array
-
+  }, [issueId]);
   if (error) {
     return <div className="min-h-screen flex items-center justify-center text-xl">{error}</div>;
   }
